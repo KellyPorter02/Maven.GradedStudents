@@ -9,14 +9,16 @@ public class Student {
     ArrayList<Double> examScores;
 
 
-    public Student() {
-
-    }
-
-    public Student(String firstName) {
-        this.firstName = firstName;
-
-    }
+//    public Student() {
+//
+//    }
+//
+//    public Student(String firstName) {
+//        this.firstName = firstName;
+//
+//    }
+//
+    // Constructor Methods
 
     public Student(String firstName, String lastName) {
         this.firstName = firstName;
@@ -26,6 +28,7 @@ public class Student {
 
     public Student(ArrayList<Double> examScores) {
                 this.examScores = examScores;
+                System.out.println(examScores);
 
     }
 
@@ -33,7 +36,10 @@ public class Student {
         this.firstName = firstName;
         this.lastName = lastName;
         this.examScores = examScores;
+        System.out.println(examScores);
     }
+
+    // Getters & Setters
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -45,44 +51,39 @@ public class Student {
 
     }
 
-    public String getFirstName(String firstName) {
+    public String getFirstName() {
         return firstName;
 
     }
 
-    public String getLastName(String lastName) {
+    public String getLastName() {
         return lastName;
     }
 
-    public String getExamScores(ArrayList<Double> examScores) {
-        // needs to take arraylist, convert to string list, add all values together in one string, return string of Exam Scores
-        int i = 0;
-        int j = 1;
-        String scoresString = "";
-
-        for (Double element : examScores) {
-            scoresString += "Exam " + j + " -> " + examScores.get(i) + "\n";
-            i++;
-            j++;
-        }
-        return scoresString;
-    }
-
-    public int getNumberOfExamsTaken(ArrayList<Double> examScores) {
-        int numExams = examScores.size();
-        return numExams;
-    }
-
-    public void addExamScore(double scoreToAdd) {
-        examScores.add(scoreToAdd);
-    }
 
     public void setExamScore(int examNumberToReplace, double replacementScore) {
         examScores.set(examNumberToReplace, replacementScore);
 
     }
 
-    public double getAverageExamScore(ArrayList<Double> examScores) {
+    public String getExamScores() {
+        String stringValueOfExamScores = examScores.toString();
+        return stringValueOfExamScores;
+
+    }
+
+    public int getNumberOfExamsTaken() {
+        int numExams = examScores.size();
+        return numExams;
+    }
+
+    // Other methods
+
+    public void addExamScore(double scoreToAdd) {
+        examScores.add(scoreToAdd);
+    }
+
+    public double getAverageExamScore() {
         double sumOfExamScores = 0;
         double numExamScores = examScores.size();
         int i = 0;
@@ -94,8 +95,10 @@ public class Student {
         return avgExamScore;
     }
 
+
 //    @Override
 //    public String toString(String firstName, String lastName, Student student) {
+//        return super.toString();
 //        String studentFirstName = firstName;
 //        String studentLastName = lastName;
 //        Double avgExamScore = student.getAverageExamScore();
