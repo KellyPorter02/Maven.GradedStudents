@@ -63,11 +63,13 @@ public class Student {
 
     public void setExamScore(int examNumberToReplace, double replacementScore) {
         examScores.set(examNumberToReplace, replacementScore);
+        System.out.println(examScores.set(examNumberToReplace, replacementScore));
 
     }
 
     public String getExamScores() {
         String stringValueOfExamScores = examScores.toString();
+        System.out.println(stringValueOfExamScores);
         return stringValueOfExamScores;
 
     }
@@ -95,18 +97,16 @@ public class Student {
         return avgExamScore;
     }
 
+    public String toString(String firstName, String lastName, Student student) {
 
-//    @Override
-//    public String toString(String firstName, String lastName, Student student) {
-//        return super.toString();
-//        String studentFirstName = firstName;
-//        String studentLastName = lastName;
-//        Double avgExamScore = student.getAverageExamScore();
-//        String examScoresString = student.getExamScores();
-//        String summaryString = "Student name: " + studentFirstName + " " + studentLastName +"\n Average Score: " + avgExamScore + "\n" + examScoresString;
-//
-//        return summaryString;
-//    }
+        String studentFirstName = firstName;
+        String studentLastName = lastName;
+        Double avgExamScore = student.getAverageExamScore();
+        String examScoresString = student.getExamScores();
+        String summaryString = "Student name: " + studentFirstName + " " + studentLastName +"\n Average Score: " + avgExamScore + "\n" + examScoresString;
+
+        return summaryString;
+    }
 
 }
 
