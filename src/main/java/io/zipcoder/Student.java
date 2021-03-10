@@ -1,6 +1,7 @@
 package io.zipcoder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Student {
 
@@ -27,8 +28,8 @@ public class Student {
     }
 
     public Student(ArrayList<Double> examScores) {
-                this.examScores = examScores;
-                System.out.println(examScores);
+        this.examScores = examScores;
+        System.out.println(examScores);
 
     }
 
@@ -36,6 +37,7 @@ public class Student {
         this.firstName = firstName;
         this.lastName = lastName;
         this.examScores = examScores;
+      //**** examScores.addAll(Arrays.asList(examScores)); use this!!!
         System.out.println(examScores);
     }
 
@@ -97,16 +99,17 @@ public class Student {
         return avgExamScore;
     }
 
-    public String toString(String firstName, String lastName, Student student) {
+//    public String toString() {
+//
+//        String studentFirstName = firstName;
+//        String studentLastName = lastName;
+//        Double avgExamScore = student.getAverageExamScore();
+//        String examScoresString = student.getExamScores();
+//        String summaryString = "Student name: " + studentFirstName + " " + studentLastName +"\n Average Score: " + avgExamScore + "\n" + examScoresString;
+//
+//        return summaryString;
+//    }
 
-        String studentFirstName = firstName;
-        String studentLastName = lastName;
-        Double avgExamScore = student.getAverageExamScore();
-        String examScoresString = student.getExamScores();
-        String summaryString = "Student name: " + studentFirstName + " " + studentLastName +"\n Average Score: " + avgExamScore + "\n" + examScoresString;
-
-        return summaryString;
-    }
 
 }
 
