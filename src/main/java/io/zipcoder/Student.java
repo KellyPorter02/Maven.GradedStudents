@@ -21,30 +21,35 @@ public class Student {
 //
     // Constructor Methods
 
-    public Student(String firstName, String lastName) {
+    public Student(String firstName, String lastName, Double[] testScores) {
         this.firstName = firstName;
         this.lastName = lastName;
-
-    }
-
-    public Student(ArrayList<Double> examScores) {
-        this.examScores = examScores;
+        Double[] testScoresRegArrType = testScores;
+        ArrayList<Double> testScoresAsArrList = new ArrayList<Double>(Arrays.asList(testScoresRegArrType));
+        examScores = testScoresAsArrList;
         System.out.println(examScores);
 
     }
 
-    public Student(String firstName, String lastName, ArrayList<Double> examScores) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.examScores = examScores;
-      //**** examScores.addAll(Arrays.asList(examScores)); use this!!!
-        System.out.println(examScores);
-    }
+//    public Student(ArrayList<Double> examScores) {
+//        this.examScores = examScores;
+//        System.out.println(examScores);
+//
+//    }
+
+//    public Student(String firstName, String lastName, ArrayList<Double> examScores) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.examScores = examScores;
+//      //**** examScores.addAll(Arrays.asList(examScores)); use this!!!
+//        System.out.println(examScores);
+//    }
 
     // Getters & Setters
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+
 
     }
 
@@ -62,19 +67,19 @@ public class Student {
         return lastName;
     }
 
-
-    public void setExamScore(int examNumberToReplace, double replacementScore) {
-        examScores.set(examNumberToReplace, replacementScore);
-        System.out.println(examScores.set(examNumberToReplace, replacementScore));
-
-    }
-
     public String getExamScores() {
         String stringValueOfExamScores = examScores.toString();
         System.out.println(stringValueOfExamScores);
         return stringValueOfExamScores;
 
     }
+
+    public void resetExamScore(int examNumberToReplace, double replacementScore) {
+        examScores.set(examNumberToReplace, replacementScore);
+        System.out.println(examScores.set(examNumberToReplace, replacementScore));
+
+    }
+
 
     public int getNumberOfExamsTaken() {
         int numExams = examScores.size();
