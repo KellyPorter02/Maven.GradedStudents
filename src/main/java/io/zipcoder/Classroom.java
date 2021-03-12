@@ -21,7 +21,6 @@ public class Classroom {
         this.students = arrayOfStudents;
     }
 
-    public Classroom(int maxNumOfStudents, Student[] students) {}
 
     public Student[] getStudents() {
         return students;
@@ -35,9 +34,13 @@ public class Classroom {
         Double studentAverage = sum / student.length;
         return studentAverage;
     }
-//
-//    public void addStudent(Student student) {}
-//
+
+    public void addStudent(Student[] studentArr, Student studentToAdd) {
+        int lengthOfArray = studentArr.length - 1;
+        studentArr[lengthOfArray] = studentToAdd;
+
+    }
+
 //    public void removeStudent(String firstName, String lastName) {}
 //
 //    public Student[] getStudentByScore() {}
