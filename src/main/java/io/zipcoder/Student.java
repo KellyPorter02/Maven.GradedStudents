@@ -65,6 +65,7 @@ public class Student {
 
     public String getLastName() {
         return lastName;
+
     }
 
     public String getExamScores() {
@@ -114,6 +115,15 @@ public class Student {
 //
 //        return summaryString;
 //    }
+
+    public static void main(String[] args) {
+        Double[] kellysTestScores = {45.0, 55.0, 76.0, 86.0};
+        Student student1 = new Student("Kelly", "Porter", kellysTestScores);
+        double kellyTestStuff = student1.getAverageExamScore();
+        System.out.println(kellyTestStuff);
+
+
+    }
 
 
 }

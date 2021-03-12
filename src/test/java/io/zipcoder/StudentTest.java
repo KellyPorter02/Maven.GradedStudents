@@ -378,31 +378,63 @@ public class StudentTest {
 //        Assert.assertNotEquals(351, actualArrayLength);
 //    }
 //
-//    @Test
-//    public void addExamScoreTest() {
-//        // : Given
-//        String expectedFirstName = "Kelly";
-//        String expectedlastName = "Porter";
-//
-//
-//        ArrayList<Double> expectedExamScoresArr = new ArrayList<Double>();
-//        expectedExamScoresArr.add(100.0);
-//        expectedExamScoresArr.add(95.0);
-//        expectedExamScoresArr.add(123.0);
-//        expectedExamScoresArr.add(96.0);
-//        expectedExamScoresArr.add(15.0);
-//
-//        // When
-//        Student testStudent = new Student(expectedFirstName, expectedlastName, expectedExamScoresArr);
-//
-//        // Then
-//        int expectedArrayLength = expectedExamScoresArr.size();
-//        int actualArrayLength = testStudent.getNumberOfExamsTaken();
-//
-//
-//        Assert.assertEquals(expectedArrayLength, actualArrayLength);
-//        Assert.assertNotEquals(351, actualArrayLength);
-//    }
+    @Test
+    public void addExamScoreTest() {
+        // : Given
+        String expectedFirstName = "Monali";
+        String expectedLastName = "Litouka";
+        Double[] testNewArray = {100.0, 95.0, 123.0, 96.0};
+
+        // When
+        Student testStudent = new Student(expectedFirstName, expectedLastName, testNewArray);
+        Double scoreToPassIn = 75.0;
+
+        // Then
+        testStudent.addExamScore(scoreToPassIn);
+        int expectedArrayLength = testNewArray.length;
+
+        int actualArrayLength = testStudent.getNumberOfExamsTaken();
+
+
+        Assert.assertEquals(expectedArrayLength, actualArrayLength);
+        Assert.assertNotEquals(351, actualArrayLength);
+    }
+
+    @Test
+    public void setFirstName() {
+    }
+
+    @Test
+    public void testSetLastName() {
+    }
+
+    @Test
+    public void getFirstName() {
+    }
+
+    @Test
+    public void getLastName() {
+    }
+
+    @Test
+    public void getExamScores() {
+    }
+
+    @Test
+    public void resetExamScore() {
+    }
+
+    @Test
+    public void getNumberOfExamsTaken() {
+    }
+
+    @Test
+    public void addExamScore() {
+    }
+
+    @Test
+    public void getAverageExamScore() {
+    }
 //
 //    @Test
 //    public void getAverageExamScoreTest() {
