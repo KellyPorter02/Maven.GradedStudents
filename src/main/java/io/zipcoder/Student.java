@@ -24,9 +24,7 @@ public class Student {
     public Student(String firstName, String lastName, Double[] testScores) {
         this.firstName = firstName;
         this.lastName = lastName;
-        Double[] testScoresRegArrType = testScores;
-        ArrayList<Double> testScoresAsArrList = new ArrayList<Double>(Arrays.asList(testScoresRegArrType));
-        examScores = testScoresAsArrList;
+        examScores = new ArrayList<Double>(Arrays.asList(testScores));
         System.out.println(examScores);
 
     }
@@ -121,7 +119,6 @@ public class Student {
         Student student1 = new Student("Kelly", "Porter", kellysTestScores);
         double kellyTestStuff = student1.getAverageExamScore();
         System.out.println(kellyTestStuff);
-
 
     }
 

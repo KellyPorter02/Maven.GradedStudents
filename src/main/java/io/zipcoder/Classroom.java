@@ -9,6 +9,7 @@ public class Classroom {
 
 
     public Classroom() {
+
         Student[] students = new Student[30];
     }
 
@@ -20,6 +21,10 @@ public class Classroom {
     public Classroom(Student[] arrayOfStudents) {
         this.students = arrayOfStudents;
     }
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
 
 
     public Student[] getStudents() {
