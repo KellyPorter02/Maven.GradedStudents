@@ -8,53 +8,6 @@ import java.util.Arrays;
 
 public class StudentTest {
 
-//    @Test
-//    public void constructorWithFirstAndLastTest() {
-//        // : Given
-//        String expectedFirstName = "Kelly";
-//        String expectedlastName = "Porter";
-//
-//        // When
-//        Student testStudent = new Student(expectedFirstName, expectedlastName);
-//
-//        // Then
-//        String actualFirstName = testStudent.getFirstName();
-//        String actualLastName = testStudent.getLastName();
-//
-//
-//        Assert.assertEquals(expectedFirstName, actualFirstName);
-//        Assert.assertNotEquals("Joe", actualFirstName);
-//        Assert.assertEquals(expectedlastName, actualLastName);
-//        Assert.assertNotEquals("Dirt", actualLastName);
-//
-//    }
-
-//    @Test
-//    public void constructorArrayListTest() {
-//        // : Given
-//        ArrayList<Double> expectedExamScoresArr = new ArrayList<Double>();
-//        expectedExamScoresArr.add(100.0);
-//        expectedExamScoresArr.add(95.0);
-//        expectedExamScoresArr.add(123.0);
-//        expectedExamScoresArr.add(96.0);
-//
-//        String expectedArrayString = expectedExamScoresArr.toString();
-//
-//        // When
-//        Student testStudent = new Student(expectedExamScoresArr);
-//
-//        // Then
-//
-//        int expectedArrayLength = 4;
-//        int actualArrayLength = testStudent.getNumberOfExamsTaken();
-//        ArrayList<Double> actualExamScoresArr = new ArrayList<Double>();
-//        String actualArrayString = testStudent.getExamScores();
-//
-//        Assert.assertEquals(expectedArrayString, actualArrayString);
-//        Assert.assertNotEquals(null, actualArrayString);
-//
-//    }
-
     @Test
     public void constructorWithFirstLastAndArrayTest() {
         // : Given
@@ -349,35 +302,7 @@ public class StudentTest {
         Assert.assertNotEquals("", actualArrayString);
 
     }
-//
 
-//
-//    @Test
-//    public void getNumberOfExamsTakenTest() {
-//        // : Given
-//        String expectedFirstName = "Kelly";
-//        String expectedlastName = "Porter";
-//
-//
-//        ArrayList<Double> expectedExamScoresArr = new ArrayList<Double>();
-//        expectedExamScoresArr.add(100.0);
-//        expectedExamScoresArr.add(95.0);
-//        expectedExamScoresArr.add(123.0);
-//        expectedExamScoresArr.add(96.0);
-//        expectedExamScoresArr.add(15.0);
-//
-//        // When
-//        Student testStudent = new Student(expectedFirstName, expectedlastName, expectedExamScoresArr);
-//
-//        // Then
-//        int expectedArrayLength = expectedExamScoresArr.size();
-//        int actualArrayLength = testStudent.getNumberOfExamsTaken();
-//
-//
-//        Assert.assertEquals(expectedArrayLength, actualArrayLength);
-//        Assert.assertNotEquals(351, actualArrayLength);
-//    }
-//
     @Test
     public void addExamScoreTest() {
         // : Given
@@ -401,45 +326,17 @@ public class StudentTest {
     }
 
     @Test
-    public void setFirstName() {
+    public void testToString() {
+        // Arrange
+        String expectedFirstName = "Monali";
+        String expectedLastName = "Litouka";
+        Double[] testNewArray = {100.0, 95.0, 123.0, 96.0};
+        Student testStudent = new Student(expectedFirstName, expectedLastName, testNewArray);
+        Student testStudent2 = new Student(expectedFirstName, expectedLastName, testNewArray);
+        String expected = testStudent.toString();
+        // Act
+        String returned = testStudent2.toString();
+        // Assert
+        Assert.assertEquals(expected, returned);
     }
-
-    @Test
-    public void testSetLastName() {
-    }
-
-    @Test
-    public void getFirstName() {
-    }
-
-    @Test
-    public void getLastName() {
-    }
-
-    @Test
-    public void getExamScores() {
-    }
-
-    @Test
-    public void resetExamScore() {
-    }
-
-    @Test
-    public void getNumberOfExamsTaken() {
-    }
-
-    @Test
-    public void addExamScore() {
-    }
-
-    @Test
-    public void getAverageExamScore() {
-    }
-//
-//    @Test
-//    public void getAverageExamScoreTest() {
-//
-//    }
-
-
 }

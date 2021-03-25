@@ -22,10 +22,6 @@ public class Classroom {
         this.students = arrayOfStudents;
     }
 
-    git config --global user.name "Your Name"
-    git config --global user.email you@example.com
-
-
 
     public Student[] getStudents() {
         return students;
@@ -46,12 +42,12 @@ public class Classroom {
 
     }
 
-//    public void removeStudent(String firstName, String lastName) {}
-//
-//    public Student[] getStudentByScore() {}
-//
-//    public linkmap??? getGradeBook() {}
-//
-//
-//
+    public void removeStudent(String firstName, String lastName) {}
+
+    public Student[] getStudentByScore() { return null; }
+
+    public void getGradeBook() {}
+
+
+
 }

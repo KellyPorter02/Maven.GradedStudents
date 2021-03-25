@@ -10,17 +10,6 @@ public class Student {
     ArrayList<Double> examScores;
 
 
-//    public Student() {
-//
-//    }
-//
-//    public Student(String firstName) {
-//        this.firstName = firstName;
-//
-//    }
-//
-    // Constructor Methods
-
     public Student(String firstName, String lastName, Double[] testScores) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -29,21 +18,6 @@ public class Student {
 
     }
 
-//    public Student(ArrayList<Double> examScores) {
-//        this.examScores = examScores;
-//        System.out.println(examScores);
-//
-//    }
-
-//    public Student(String firstName, String lastName, ArrayList<Double> examScores) {
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.examScores = examScores;
-//      //**** examScores.addAll(Arrays.asList(examScores)); use this!!!
-//        System.out.println(examScores);
-//    }
-
-    // Getters & Setters
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -85,7 +59,6 @@ public class Student {
         return numExams;
     }
 
-    // Other methods
 
     public void addExamScore(double scoreToAdd) {
         examScores.add(scoreToAdd);
@@ -103,24 +76,19 @@ public class Student {
         return avgExamScore;
     }
 
-//    public String toString() {
-//
-//        String studentFirstName = firstName;
-//        String studentLastName = lastName;
-//        Double avgExamScore = student.getAverageExamScore();
-//        String examScoresString = student.getExamScores();
-//        String summaryString = "Student name: " + studentFirstName + " " + studentLastName +"\n Average Score: " + avgExamScore + "\n" + examScoresString;
-//
-//        return summaryString;
-//    }
+        @Override
+    public String toString() {
 
-    public static void main(String[] args) {
-        Double[] kellysTestScores = {45.0, 55.0, 76.0, 86.0};
-        Student student1 = new Student("Kelly", "Porter", kellysTestScores);
-        double kellyTestStuff = student1.getAverageExamScore();
-        System.out.println(kellyTestStuff);
+        String studentFirstName = firstName;
+        String studentLastName = lastName;
+        Double avgExamScore = this.getAverageExamScore();
+        String examScoresString = this.getExamScores();
+        String summaryString = "Student name: " + studentFirstName + " " + studentLastName +"\n Average Score: " + avgExamScore + "\n" + examScoresString;
 
+        return summaryString;
     }
+
+
 
 
 }
