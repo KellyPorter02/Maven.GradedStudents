@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class StudentTest {
@@ -226,8 +227,6 @@ public class StudentTest {
         // Then
 
         String actualArrayString = testStudent.getExamScores();
-
-
         Assert.assertEquals(expectedArrayString, actualArrayString);
 
     }
@@ -316,7 +315,7 @@ public class StudentTest {
 
         // Then
         testStudent.addExamScore(scoreToPassIn);
-        int expectedArrayLength = testNewArray.length;
+        int expectedArrayLength = 5;
 
         int actualArrayLength = testStudent.getNumberOfExamsTaken();
 
@@ -338,5 +337,62 @@ public class StudentTest {
         String returned = testStudent2.toString();
         // Assert
         Assert.assertEquals(expected, returned);
+    }
+
+    @Test
+    public void testToStringNeg() {
+        // Arrange
+        String expectedFirstName = "Monali";
+        String expectedLastName = "Litouka";
+        Double[] testNewArray = {100.0, 95.0, 123.0, 96.0};
+        Student testStudent = new Student(expectedFirstName, expectedLastName, testNewArray);
+        Student testStudent2 = new Student(expectedFirstName, expectedLastName, testNewArray);
+        String expected = testStudent.toString();
+        // Act
+        String returned = testStudent2.toString();
+        // Assert
+        Assert.assertNotEquals(null, returned);
+    }
+
+    @Test
+    public void compareToTest1() {
+        Double[] studentArr1 = {65.0, 34.0, 87.0, 98.0};
+        Double[] studentArr2 = {85.0, 42.0, 12.0, 88.0};
+        Student student1 = new Student("Kelly", "Porter", studentArr1);
+        Student student2 = new Student("Lena", "Litouka", studentArr2);
+        Student[] arrayOfStudents = {student1, student2};
+        List<Student> targetList = new ArrayList<Student>(Arrays.asList(arrayOfStudents));
+
+        int result = student1.compareTo(student2);
+        int expected = -1;
+        Assert.assertEquals(expected, result);
+    }
+
+    @Test
+    public void compareToTest2() {
+        Double[] studentArr1 = {65.0, 34.0, 87.0, 98.0};
+        Double[] studentArr2 = {65.0, 34.0, 87.0, 98.0};
+        Student student1 = new Student("Kelly", "Porter", studentArr1);
+        Student student2 = new Student("Lena", "Litouka", studentArr2);
+        Student[] arrayOfStudents = {student1, student2};
+        List<Student> targetList = new ArrayList<Student>(Arrays.asList(arrayOfStudents));
+
+        int result = student1.compareTo(student2);
+        int expected = 0;
+        Assert.assertEquals(expected, result);
+    }
+
+    @Test
+    public void compareToTest3() {
+        Double[] studentArr1 = {65.0, 34.0, 87.0, 98.0};
+        Double[] studentArr2 = {85.0, 42.0, 12.0, 88.0};
+        Student student1 = new Student("Lena", "Litouka", studentArr2);
+        Student student2 = new Student("Kelly", "Porter", studentArr1);
+        Student[] arrayOfStudents = {student1, student2};
+        List<Student> targetList = new ArrayList<Student>(Arrays.asList(arrayOfStudents));
+
+        int result = student1.compareTo(student2);
+        int expected = 1;
+        Assert.assertEquals(expected, result);
     }
 }
